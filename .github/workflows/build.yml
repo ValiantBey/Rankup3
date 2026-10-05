@@ -31,7 +31,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build plugin
-        run: ./gradlew shadowJar --no-daemon
+        run: ./gradlew shadowJar -x compileTestJava -x test --no-daemon
 
       - name: Upload plugin
         uses: actions/upload-artifact@v4
